@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Halley Wallace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HW</a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">Research</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="research-layout">
+
+                <!-- Sidebar -->
+                <aside class="research-sidebar">
+                    <p class="sidebar-label">Research Areas</p>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-btn active" data-target="darpa">
+                            <span class="sidebar-num">01</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Squid-Inspired Superpropulsion</span>
+                                <span class="sidebar-sub">DARPA · 2024–Present</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="manu">
+                            <span class="sidebar-num">02</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Manu Jumping</span>
+                                <span class="sidebar-sub">Fluid Dynamics · 2025</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="mudskipper">
+                            <span class="sidebar-num">03</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Mudskipper Locomotion</span>
+                                <span class="sidebar-sub">Field Biology · 2024–2025</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                    </nav>
+
+                    <div class="sidebar-skills">
+                        <p class="sidebar-label">Technical Skills</p>
+                        <ul class="skill-list">
+                            <li>Additive Manufacturing (FDM, SLA, SLS)</li>
+                            <li>CAD (Fusion 360, SolidWorks, Onshape)</li>
+                            <li>CAM (Autodesk)</li>
+                            <li>MATLAB</li>
+                            <li>PIV &amp; PTV · High-speed imaging</li>
+                            <li>Precision Machining</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Accordion content -->
+                <main class="research-content">
+
+                    <!-- DARPA -->
+                    <div class="accordion-section open" id="darpa">
+                        <button class="accordion-header" aria-expanded="true">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">DARPA · 2024–Present</span>
+                                <h2>Squid-Inspired Superpropulsion</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <!-- Thrust GIF — full width opener -->
+                            <div class="accordion-media-row">
+                                <div class="acc-gif full-width-gif">
+                                    <img src="assets/images/darpa_thrust.gif" alt="DARPA underwater thrust test">
+                                </div>
+                            </div>
+
+                            <p>
+                                As part of a DARPA superpropulsion project at the Bhamla Lab,
+                                I contributed to the design and fabrication of a soft bio-inspired nozzle
+                                system for autonomous underwater vehicles (AUVs) — inspired by the jet
+                                propulsion mechanics of squid. The system achieved a
+                                <strong>30% improvement in thrust</strong> at equivalent power consumption.
+                            </p>
+
+                            <!-- Kayak GIF + text split row -->
+                            <div class="res-media-split" style="margin:0.25rem 0 1rem;">
+                                <div>
+                                    <p style="margin-top:0;">
+                                        I applied a multi-fidelity Bayesian optimization framework to refine nozzle
+                                        geometry and material design spaces, reducing experimental testing time by
+                                        <strong>70%</strong> while collaborating with CFD and FEA simulation teams.
+                                        I designed and built a full-scale aluminum test structure mounted to a
+                                        single-hull vessel for open-water validation, along with custom force load
+                                        test rigs using load cell instrumentation and Arduino-based DAQ pipelines.
+                                    </p>
+                                    <p>
+                                        I also performed Particle Image Velocimetry (PIV) and high-speed imaging
+                                        to analyze fluid–structure interactions, and used MATLAB and Python to
+                                        post-process data for DARPA program managers and naval contractors.
+                                        I am co-author on two peer-reviewed publications and a provisional patent,
+                                        with a third paper currently in review at <em>Science Advances</em>.
+                                    </p>
+                                </div>
+                                <div style="border-radius:10px;overflow:hidden;margin-top:0.1rem;">
+                                    <img src="assets/images/kayakvideo.gif" alt="Open-water kayak test run" style="width:100%;display:block;">
+                                </div>
+                            </div>
+
+                            <!-- Pool gallery — all 4:3 images in 4:3 containers, no white space -->
+                            <div class="research-photo-gallery">
+                                <figure class="gallery-item">
+                                    <img src="assets/images/darpa_pool1.jpg" alt="Soft nozzle mounted on test rig">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/darpa_pool2.jpg" alt="Test vessel at GT Aquatic Center">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/darpa_pool3.jpg" alt="Vessel underway in competition pool">
+                                </figure>
+                            </div>
+                            <p class="gallery-caption">
+                                Full-scale experimental soft nozzle testing — I developed this support
+                                propeller system and tested in a competition-sized pool at the Georgia
+                                Tech McAuley Aquatic Center (May 2026).
+                            </p>
+
+                            <div class="acc-figure-wrap">
+                                <img src="assets/images/darpa_bayesian.png" alt="Bayesian optimization results showing nozzle generations and thrust data">
+                            </div>
+                            <p class="gallery-caption">Multi-objective Bayesian optimization results — nozzle geometry generations (rigid) and thrust measurements across the design space.</p>
+
+                            <div class="accordion-links-section">
+                                <h4>Conference Presentations</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>APS Global Physics Summit 2026</strong> — Oral Presentation · Denver, CO · March 2026</li>
+                                    <li><strong>SICB Annual Meeting 2026</strong> — Oral Presentation · Portland, OR · January 2026</li>
+                                    <li><strong>APS Division of Fluid Dynamics 2025</strong> — Oral Presentation · Houston, TX · November 2025</li>
+                                    <li><strong>APS Global Physics Conference 2025</strong> — Poster · Anaheim, CA · March 2025</li>
+                                </ul>
+                                <a href="publications.html" class="feat-link-btn" style="margin-top:1rem;display:inline-flex;">
+                                    <i class="fas fa-book-open"></i> View Publications
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manu -->
+                    <div class="accordion-section" id="manu">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge manu-badge">Published · 2025</span>
+                                <h2>Manu Jumping</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+                            <p>
+                                The "Manu" is a Pacific island diving technique in which a person jumps
+                                into a pool or body of water with their knees tucked to their chest,
+                                creating an enormous splash. This research investigates the fluid dynamics
+                                underlying the Manu — specifically how body posture, entry angle, and
+                                timing control the magnitude of the splash.
+                            </p>
+                            <p>
+                                Using high-speed imaging and computational fluid dynamics, we characterized
+                                how air entrainment and cavity formation drive the large water displacement
+                                characteristic of the Manu. The work was published in the
+                                <em>Journal of the Royal Society Interface</em> and featured by Georgia Tech.
+                            </p>
+
+                            <!-- High-speed sequences — capped at native 430px width to preserve sharpness -->
+                            <div style="max-width:430px;margin:1rem 0 0;border-radius:8px;overflow:hidden;background:var(--bg-alt);">
+                                <img src="assets/images/manu_sequences.jpg" alt="High-speed sequences of late, optimal, and early opening cavity formation" style="width:100%;height:auto;display:block;">
+                            </div>
+                            <p class="gallery-caption">High-speed imaging sequences comparing late, optimal, and early cavity opening.</p>
+
+                            <!-- Setup photo — small inline thumbnail beside caption -->
+                            <div style="display:flex;align-items:center;gap:1rem;margin:0.5rem 0 1rem;">
+                                <img src="assets/images/manu_setup.jpg" alt="Experimental setup for Manu jump study" style="width:160px;height:auto;border-radius:8px;flex-shrink:0;border:1px solid var(--border);">
+                                <p class="gallery-caption" style="margin:0;">Experimental apparatus for controlled Manu water entry trials.</p>
+                            </div>
+
+                            <div class="accordion-links-section">
+                                <h4>Featured Coverage</h4>
+                                <div class="acc-featured-links">
+                                    <a href="https://www.gatech.edu/news/2025/05/16/rule-pool-summer-and-make-biggest-splash"
+                                       target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fas fa-newspaper"></i> Georgia Tech Feature
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=POda_NwypSM"
+                                       target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fab fa-youtube"></i> Watch on YouTube
+                                    </a>
+                                </div>
+
+                                <h4>Conference Presentations</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>Southeast Regional SICB Meeting</strong> — Oral Presentation · Harrisonburg, VA · November 2024</li>
+                                </ul>
+                                <a href="publications.html" class="feat-link-btn" style="margin-top:1rem;display:inline-flex;">
+                                    <i class="fas fa-book-open"></i> View Publications
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mudskipper -->
+                    <div class="accordion-section" id="mudskipper">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge mud-badge">Published · 2025</span>
+                                <h2>Mudskipper Locomotion</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+                            <div class="accordion-media-row">
+                                <div class="acc-gif full-width-gif">
+                                    <img src="assets/images/mudskipper.gif" alt="Mudskipper water-hopping high-speed footage">
+                                </div>
+                            </div>
+                            <p>
+                                Mudskippers are amphibious fish that move across tidal mudflats using a
+                                distinctive water-hopping gait. This research developed a portable,
+                                low-cost methodology to capture three-dimensional tracking data of
+                                mudskippers in their natural tidal-flat habitat.
+                            </p>
+                            <p>
+                                Our approach combined dual-camera video recordings with Gaussian Splatting
+                                terrain reconstruction and stereo matching to document detailed mudskipper
+                                trajectories. The findings reveal that horizontal stride length, hopping
+                                height, and velocity are strongly influenced by fish length and local
+                                terrain features — demonstrating how simple field-deployable techniques
+                                can resolve complex amphibious movements in challenging environments.
+                                A follow-on study on interfacial dynamics during water-hopping is currently
+                                in preparation.
+                            </p>
+
+                            <div class="accordion-links-section">
+                                <h4>Conference Presentations</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>Southeast Regional SICB Meeting</strong> — Oral Presentation · Harrisonburg, VA · November 2024</li>
+                                </ul>
+                                <a href="publications.html" class="feat-link-btn" style="margin-top:1rem;display:inline-flex;">
+                                    <i class="fas fa-book-open"></i> View Publications
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Halley Wallace</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Sidebar + accordion logic
+        const sidebarBtns = document.querySelectorAll('.sidebar-btn');
+        const sections    = document.querySelectorAll('.accordion-section');
+
+        function openSection(id) {
+            sections.forEach(sec => {
+                const isTarget = sec.id === id;
+                const body     = sec.querySelector('.accordion-body');
+                const icon     = sec.querySelector('.accordion-icon');
+                const header   = sec.querySelector('.accordion-header');
+                sec.classList.toggle('open', isTarget);
+                header.setAttribute('aria-expanded', isTarget);
+                if (isTarget) {
+                    body.removeAttribute('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    body.setAttribute('hidden', '');
+                    icon.style.transform = '';
+                }
+            });
+            sidebarBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.target === id);
+            });
+        }
+
+        // Sidebar click → open section + scroll
+        sidebarBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.target;
+                openSection(id);
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Accordion header click → toggle
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.accordion-section');
+                const isOpen  = section.classList.contains('open');
+                if (isOpen) {
+                    // Allow collapsing by clicking again
+                    const body = section.querySelector('.accordion-body');
+                    const icon = section.querySelector('.accordion-icon');
+                    section.classList.remove('open');
+                    header.setAttribute('aria-expanded', 'false');
+                    body.setAttribute('hidden', '');
+                    icon.style.transform = '';
+                    sidebarBtns.forEach(btn => {
+                        if (btn.dataset.target === section.id) btn.classList.remove('active');
+                    });
+                } else {
+                    openSection(section.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

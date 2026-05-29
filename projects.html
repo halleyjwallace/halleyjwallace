@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Halley Wallace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HW</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">Projects</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="research-layout">
+
+                <!-- Sidebar -->
+                <aside class="research-sidebar">
+                    <p class="sidebar-label">Projects</p>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-btn active" data-target="ecofiltro">
+                            <span class="sidebar-num">01</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Reusable Suction Filter</span>
+                                <span class="sidebar-sub">Senior Capstone · 2025</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="preeclampsia">
+                            <span class="sidebar-num">02</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Preeclampsia Detection Device</span>
+                                <span class="sidebar-sub">BME 2250 · 2024</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="lumbar">
+                            <span class="sidebar-num">03</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Wearable Lumbar Sensor</span>
+                                <span class="sidebar-sub">BME 2310 · 2024</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                    </nav>
+
+                    <p class="sidebar-label" style="margin-top:1.75rem;">Outreach</p>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-btn" data-target="medrobo">
+                            <span class="sidebar-num">04</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Medical Robotics Club</span>
+                                <span class="sidebar-sub">VP · 2023–2025</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="lbat">
+                            <span class="sidebar-num">05</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Study Abroad</span>
+                                <span class="sidebar-sub">China &amp; Korea · Summer 2025</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Accordion content -->
+                <main class="research-content">
+
+                    <!-- 01 Ecofiltro -->
+                    <div class="accordion-section open" id="ecofiltro">
+                        <button class="accordion-header" aria-expanded="true">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">Senior Capstone · 2025</span>
+                                <h2>Ecofiltro — Reusable Medical Suction Filter</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon" style="transform:rotate(180deg)"></i>
+                        </button>
+                        <div class="accordion-body">
+
+                            <!-- Capstone fair photo -->
+                            <figure class="proj-photo-item" style="margin:0 0 1.25rem;border-radius:10px;">
+                                <img src="assets/images/ecofiltro_fair.jpg" alt="Team at GT capstone design fair" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+                                <figcaption>Presenting the reusable suction filter at the Georgia Tech Capstone Design Expo.</figcaption>
+                            </figure>
+
+                            <!-- Text + CAD video side by side -->
+                            <div class="proj-split-row">
+                                <div>
+                                    <p>
+                                        Led mechanical design and validation of a frugal, reusable in-line suction
+                                        filter for operating rooms in resource-limited clinical settings, improving
+                                        suction safety and reliability by <strong>50%</strong>. Single-use filters
+                                        are routinely reused in low-resource hospitals due to cost — our device
+                                        provides a safe, sterilizable alternative where no cost-effective reusable
+                                        solution previously existed.
+                                    </p>
+                                    <p>
+                                        We conducted material and mesh analysis, porosimeter testing, and Bacterial
+                                        Filtration Efficiency (BFE) validation confirming performance across
+                                        <strong>30 sterilization cycles</strong>. I performed structural and
+                                        fluid-structure simulations and maintained ISO 13485 design control
+                                        documentation throughout.
+                                    </p>
+                                </div>
+                                <div class="proj-split-video">
+                                    <img src="assets/images/filtercad.gif" alt="CAD model animation of the reusable suction filter" style="width:100%;display:block;">
+                                    <p class="gallery-caption" style="padding:0.4rem 0.5rem;font-size:0.74rem;background:var(--bg-alt);font-style:italic;color:var(--text-muted);">CAD model of the reusable in-line suction filter assembly.</p>
+                                </div>
+                            </div>
+
+                            <!-- Real-time GIF — constrained width -->
+                            <div style="margin-top:1rem;border-radius:10px;overflow:hidden;background:var(--bg-alt);max-width:420px;">
+                                <img src="assets/images/filterrealtime.gif" alt="Real-time suction performance test" style="width:100%;display:block;">
+                            </div>
+                            <p class="gallery-caption">Real-time suction performance test of the prototype filter.</p>
+
+                            <!-- Photo grid -->
+                            <div class="proj-photo-grid">
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/ecofiltro.webp" alt="Team demonstrating filter to hospital staff">
+                                    <figcaption>Demonstrating the filter prototype to hospital staff in Antigua, Guatemala.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/guatemala_ewb.jpg" alt="Team in Guatemala">
+                                    <figcaption>Fieldwork in Guatemala — consulting with local clinicians and engineers.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/ecofiltro_facility.webp" alt="Team at Ecofiltro facility">
+                                    <figcaption>At Ecofiltro's facility in Guatemala, collaborating on filtration standards.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/filter_data.png" alt="Sterilization performance data">
+                                    <figcaption>Flow rate performance across 30 sterilization cycles — IPA, autoclave, and industry control.</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="accordion-links-section">
+                                <h4>Key Outcomes</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>50%</strong> improvement in suction safety and reliability</li>
+                                    <li>Validated across <strong>30 sterilization cycles</strong> (IPA &amp; autoclave)</li>
+                                    <li>Funded by GT ME Department and Project Impact</li>
+                                    <li>Collaborated with BME Engineers Without Borders &amp; Ecofiltro (Guatemala)</li>
+                                    <li>ISO 13485 design control documentation</li>
+                                </ul>
+
+                                <div class="proj-tools">
+                                    <span class="proj-tool-tag">NX (FEA)</span>
+                                    <span class="proj-tool-tag">COMSOL</span>
+                                    <span class="proj-tool-tag">Porosimeter Testing</span>
+                                    <span class="proj-tool-tag">Bacterial Filtration Efficiency</span>
+                                    <span class="proj-tool-tag">ISO 13485</span>
+                                    <span class="proj-tool-tag">Additive Manufacturing</span>
+                                </div>
+
+                                <h4 style="margin-top:1.5rem;">Featured Coverage</h4>
+                                <div class="acc-featured-links">
+                                    <a href="https://planet-impact.org/project-medical-device"
+                                       target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fas fa-external-link-alt"></i> Planet Impact
+                                    </a>
+                                    <a href="https://me.gatech.edu/news/engineering-impact-capstone-design-teams-tackle-global-challenges"
+                                       target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fas fa-newspaper"></i> GT News
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 Preeclampsia Detection Device -->
+                    <div class="accordion-section" id="preeclampsia">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">BME 2250 · 2024</span>
+                                <h2>Wearable Preeclampsia Early Detection Device</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+
+                            <p>
+                                Designed and prototyped a wearable ankle band for early detection of
+                                preeclampsia — a leading cause of maternal mortality, particularly affecting
+                                Black women in Georgia. The device uses a <strong>PPG sensor</strong> for
+                                continuous blood pressure monitoring and a <strong>flex sensor</strong> to
+                                quantify ankle edema, two key early indicators of preeclampsia.
+                            </p>
+                            <p>
+                                The physical prototype integrates an Arduino Nano with sensors mounted on
+                                a cloth band for comfortable at-home use. A parallel computational prototype
+                                used Python image analysis of colorimetric urinalysis assays (Congo Red Dye
+                                and Tetrabromophenol Blue) to detect proteinuria — another preeclampsia
+                                biomarker. The project emphasized high-specificity design so any positive
+                                result would be confirmed by a medical professional.
+                            </p>
+
+                            <!-- Photo grid -->
+                            <div class="proj-photo-grid">
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/cadfoot.png" alt="CAD visual of ankle monitor on foot">
+                                    <figcaption>CAD visual of the continuous ankle monitor on a foot model.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/cadband.png" alt="CAD model of device components">
+                                    <figcaption>CAD model showing the PPG sensor, flex sensor, and Arduino Nano assembly.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/caddevice.jpg" alt="Final physical prototype">
+                                    <figcaption>Final physical prototype — Arduino Nano with PPG and flex sensors on perfboard.</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="accordion-links-section">
+                                <h4>Key Outcomes</h4>
+                                <ul class="acc-conf-list">
+                                    <li>Functional PPG-based blood pressure monitoring and flex-sensor edema detection</li>
+                                    <li>Parallel computational prototype: Python image analysis of urinalysis assays</li>
+                                    <li>High-specificity design for at-home use</li>
+                                    <li>Addressed maternal health disparities in under-resourced Georgia communities</li>
+                                </ul>
+
+                                <div class="proj-tools">
+                                    <span class="proj-tool-tag">Arduino Nano</span>
+                                    <span class="proj-tool-tag">PPG Sensor</span>
+                                    <span class="proj-tool-tag">Flex Sensor</span>
+                                    <span class="proj-tool-tag">Fusion 360</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 Lumbar Sensor -->
+                    <div class="accordion-section" id="lumbar">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">BME 2310 · 2024</span>
+                                <h2>Wearable Lumbar Sensor Band</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+
+                            <p>
+                                Designed and built a wearable lumbar sensor band to monitor lower back
+                                posture and movement. The device integrates embedded electronics into a
+                                flexible, form-fitting band worn at the lumbar region, enabling non-invasive
+                                tracking of spinal position and muscle activity throughout daily activity.
+                            </p>
+                            <p>
+                                The CAD model was developed in Fusion 360, and the physical prototype was
+                                assembled and tested on a mannequin and team members. The project aimed to
+                                provide a low-cost, wearable solution for monitoring lumbar health outside
+                                of a clinical setting.
+                            </p>
+
+                            <!-- Photo grid -->
+                            <div class="proj-photo-grid">
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/back_brace_worn.jpg" alt="Device worn on mannequin">
+                                    <figcaption>Prototype worn on mannequin, showing sensor placement at the lumbar region.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/back_brace_cad.png" alt="CAD model of lumbar band">
+                                    <figcaption>Fusion 360 CAD model of the sensor band with embedded electronics housing.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item">
+                                    <img src="assets/images/back_brace_proto.jpg" alt="Physical prototype on workbench">
+                                    <figcaption>Assembled physical prototype showing the full back support structure and sensor array.</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="accordion-links-section">
+                                <h4>Key Outcomes</h4>
+                                <ul class="acc-conf-list">
+                                    <li>Wearable form-factor designed for continuous at-home lumbar monitoring</li>
+                                    <li>CAD modeled and iterated in Fusion 360 for fit and electronics integration</li>
+                                    <li>Physical prototype assembled and tested on human subjects</li>
+                                </ul>
+
+                                <div class="proj-tools">
+                                    <span class="proj-tool-tag">Fusion 360</span>
+                                    <span class="proj-tool-tag">Additive Manufacturing</span>
+                                    <span class="proj-tool-tag">Arduino</span>
+                                    <span class="proj-tool-tag">Embedded Electronics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04 Medical Robotics Club -->
+                    <div class="accordion-section" id="medrobo">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">VP · 2023–2025</span>
+                                <h2>Georgia Tech Medical Robotics Club</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+
+                            <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.25rem;">
+                                <img src="assets/images/medrobo_logo.jpeg" alt="Medical Robotics Club logo" style="width:80px;height:80px;object-fit:contain;border-radius:8px;border:1px solid var(--border);background:var(--bg-alt);flex-shrink:0;">
+                                <div>
+                                    <p style="margin:0;font-weight:600;color:var(--text);">Vice President</p>
+                                    <p style="margin:0.2rem 0 0;font-size:0.85rem;color:var(--text-muted);">Georgia Institute of Technology · 2023–2025</p>
+                                </div>
+                            </div>
+
+                            <figure style="margin:0 0 1.25rem;border-radius:10px;overflow:hidden;">
+                                <img src="assets/images/medrobo_showcase.jpg" alt="Medical Robotics Club Project Showcase" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+                                <figcaption style="font-size:0.78rem;color:var(--text-muted);padding:0.5rem 0.75rem;background:var(--bg-alt);font-style:italic;">Annual Medical Robotics Club Project Showcase — student teams presenting biomedical engineering projects.</figcaption>
+                            </figure>
+
+                            <p>
+                                Served as Vice President of Georgia Tech's Medical Robotics Club — one of
+                                the largest student organizations in the College of Engineering with
+                                <strong>200+ members</strong>. Organized technical workshops, career panels
+                                with industry professionals, and inter-team mentorship connecting
+                                undergraduates with graduate researchers and biomedical industry partners.
+                            </p>
+                            <p>
+                                Coordinated the annual Project Showcase, where student teams presented
+                                semester-long engineering projects to faculty, alumni, and industry guests.
+                                Led executive board planning, recruitment events, and maintained partnerships
+                                with GT's BME and ME departments to provide members with research and
+                                internship opportunities.
+                            </p>
+
+                            <div class="accordion-links-section">
+                                <div class="acc-featured-links">
+                                    <a href="https://sites.gatech.edu/medicalroboticsclub/"
+                                       target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fas fa-external-link-alt"></i> Club Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 05 Study Abroad / LBAT -->
+                    <div class="accordion-section" id="lbat">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">Gilman Scholar · Summer 2025</span>
+                                <h2>Study Abroad — China &amp; Korea</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+
+                            <figure style="margin:0 0 1.25rem;border-radius:10px;overflow:hidden;">
+                                <img src="assets/images/lbat_main.jpg" alt="Shenzhen skyline with flowers" style="width:100%;aspect-ratio:16/7;object-fit:cover;display:block;">
+                                <figcaption style="font-size:0.78rem;color:var(--text-muted);padding:0.5rem 0.75rem;background:var(--bg-alt);font-style:italic;">Shenzhen, China — Georgia Tech Shenzhen Institute semester, Summer 2025.</figcaption>
+                            </figure>
+
+                            <p>
+                                Spent Spring 2025 at the <strong>Georgia Tech Shenzhen Institute</strong>
+                                (GTSI) as a <strong>U.S. Department of State Gilman Scholar</strong> with
+                                the Critical Need Language Award for Chinese. The semester included immersive
+                                coursework, language study, and cross-cultural research engagement across
+                                China and South Korea.
+                            </p>
+                            <p>
+                                Visited <strong>Peking University (PKU)</strong> in Beijing to meet with
+                                Dr. Mengdi Han's lab, researching flexible bioelectronics and wearable
+                                biosensors — directly relevant to my interests in bio-inspired design and
+                                medical devices. Also visited <strong>Seoul National University (SNU)</strong>
+                                in South Korea to meet with Dr. Hyungmin Park's <em>Bio-Fluid Mechanics
+                                Laboratory</em>, exploring overlaps with my fluid dynamics research.
+                            </p>
+
+                            <div class="research-photo-gallery">
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_shenzhen.jpg" alt="Shenzhen bay Ferris wheel">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_beijing.jpg" alt="Beijing">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_pku.jpg" alt="Peking University campus">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_shanghai.jpg" alt="Shanghai skyline">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_chongqing.jpg" alt="Chongqing Hongya Cave">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_chongqing_night.jpg" alt="Chongqing Hongyadong at night">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_zhangjiajie.jpg" alt="Zhangjiajie mountains">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_korea.png" alt="Bukchon Hanok Village, Seoul">
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="assets/images/lbat_snu.jpg" alt="Seoul National University">
+                                </figure>
+                            </div>
+                            <p class="gallery-caption">Shenzhen Bay · Beijing · Peking University · Shanghai · Chongqing · Chongqing Night · Zhangjiajie · Seoul · Seoul National University</p>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Halley Wallace</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        const sidebarBtns = document.querySelectorAll('.sidebar-btn');
+        const sections    = document.querySelectorAll('.accordion-section');
+
+        function openSection(id) {
+            sections.forEach(sec => {
+                const isTarget = sec.id === id;
+                const body   = sec.querySelector('.accordion-body');
+                const icon   = sec.querySelector('.accordion-icon');
+                const header = sec.querySelector('.accordion-header');
+                sec.classList.toggle('open', isTarget);
+                header.setAttribute('aria-expanded', isTarget);
+                if (isTarget) {
+                    body.removeAttribute('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    body.setAttribute('hidden', '');
+                    icon.style.transform = '';
+                }
+            });
+            sidebarBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.target === id);
+            });
+        }
+
+        sidebarBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.target;
+                openSection(id);
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.accordion-section');
+                const isOpen  = section.classList.contains('open');
+                if (isOpen) {
+                    const body = section.querySelector('.accordion-body');
+                    const icon = section.querySelector('.accordion-icon');
+                    section.classList.remove('open');
+                    header.setAttribute('aria-expanded', 'false');
+                    body.setAttribute('hidden', '');
+                    icon.style.transform = '';
+                    sidebarBtns.forEach(btn => {
+                        if (btn.dataset.target === section.id) btn.classList.remove('active');
+                    });
+                } else {
+                    openSection(section.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

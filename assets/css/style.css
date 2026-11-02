@@ -1936,29 +1936,6 @@ a.fact-chip:hover { border-color: var(--accent); color: var(--accent); }
 .proj-photo-item.no-crop img { aspect-ratio: auto; height: auto; }
 .proj-photo-item.no-crop:hover img { transform: none; }
 
-/* Equation list */
-.eq-list {
-    display: grid;
-    grid-template-columns: minmax(170px, auto) 1fr;
-    gap: 0.55rem 1.25rem;
-    margin: 0.25rem 0 0.5rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.eq-list dd {
-    /* Not Playfair: its old-style numerals make a "2" read like a "z" */
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--text);
-}
-
-@media (max-width: 640px) {
-    .eq-list { grid-template-columns: 1fr; gap: 0.1rem; }
-    .eq-list dd { margin-bottom: 0.6rem; }
-}
-
 /* Coming soon placeholder */
 .proj-coming-soon {
     border: 2px dashed var(--border);

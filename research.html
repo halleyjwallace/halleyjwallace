@@ -98,7 +98,7 @@
                     <div class="accordion-section open" id="thesis">
                         <button class="accordion-header" aria-expanded="true">
                             <div class="accordion-header-text">
-                                <span class="accordion-badge progress-badge">M.S. Thesis · Cornell · In Progress</span>
+                                <span class="accordion-badge progress-badge">M.S. Thesis · 2026–Present</span>
                                 <h2>Quadrotor-Inspired Surface Robot Fleets</h2>
                             </div>
                             <i class="fas fa-chevron-down accordion-icon"></i>
@@ -108,54 +108,35 @@
                             <div class="res-media-split" style="margin-top:1.25rem;">
                                 <div>
                                     <p style="margin-top:0;">
-                                        My thesis in <strong><a href="https://sites.google.com/cornell.edu/sunnyjsh" target="_blank" rel="noopener">Sunny Jung's Bio-Inspired Fluids Lab</a></strong>
-                                        takes a physical AI approach to adaptive sampling and collection in
-                                        waterways. Models of lakes and coastal waters are often coarse, delayed,
-                                        or inaccurate at the scales where algal blooms form and floating plastic
-                                        collects. Robots can measure at those scales, but preplanned surveys
-                                        cannot adapt to changing conditions.
+                                        In <strong><a href="https://sites.google.com/cornell.edu/sunnyjsh" target="_blank" rel="noopener">Sunny Jung's Bio-Inspired Fluids Lab</a></strong>,
+                                        I am developing a four-thruster autonomous surface vehicle with a central
+                                        collection impeller for adaptive sampling of floating plastic and algal
+                                        blooms in waterways.
                                     </p>
                                     <p>
-                                        I am developing a four-propeller surface robot with a quadcopter-like
-                                        thruster layout and a central collection impeller. The goal is a fleet
-                                        that continuously updates its environmental predictions with its own
-                                        measurements, then uses them to guide sampling, motion, and energy use.
+                                        My work focuses on the vehicle hardware, control, and energy
+                                        optimization, with the goal of a robot fleet that updates environmental
+                                        predictions from its own measurements to reach the same map accuracy as a
+                                        preplanned survey with <strong>lower energy use</strong>.
                                     </p>
                                 </div>
                                 <figure class="proj-photo-item no-crop">
                                     <img src="assets/images/thesis_robot.jpg" alt="Early-stage surface robot prototype with two white flotation tubes, four green thruster housings, and central electronics">
-                                    <figcaption>Early-stage prototype, showing the flotation structures, thruster arrangement, and central hardware assembly.</figcaption>
+                                    <figcaption>Early-stage prototype of the surface robot.</figcaption>
                                 </figure>
                             </div>
 
                             <div class="accordion-links-section">
-                                <h4>Hardware</h4>
+                                <h4>Research Focus</h4>
                                 <ul class="acc-conf-list">
-                                    <li><strong>Vehicle:</strong> four thrusters and a centered impeller on a small hull, an uncommon layout with little published performance data</li>
-                                    <li><strong>Current control stack:</strong> Raspberry Pi control station and relay over an NRF24L01 radio link, with an Arduino Micro driving the motor controllers and a 500 ms failsafe that cuts power if the connection drops</li>
-                                    <li><strong>Collection:</strong> the impeller will draw surface water and floating plastic into an onboard chamber</li>
-                                    <li><strong>Planned sensors:</strong> GPS, IMU, and water speed for local surface current; chlorophyll fluorescence for algal blooms; a downward camera for larger debris; temperature and turbidity; and near-infrared evaluation for plastic classification</li>
-                                    <li><strong>Test rigs:</strong> adapting the load cell rigs I built for DARPA propulsion testing to measure the thrust and power of each propeller, and how the propellers and impeller affect one another</li>
-                                </ul>
-
-                                <h4>Optimization</h4>
-                                <ul class="acc-conf-list">
-                                    <li><strong>Thrust allocation:</strong> converting a desired motion into a command for each of the four thrusters, with the impeller included so the robot holds course while collecting</li>
-                                    <li><strong>Collection vs. energy:</strong> controlling impeller speed and characterizing how collection rate and energy use change with flow rate</li>
-                                    <li><strong>Energy per distance:</strong> towing and drift tests across different speeds and currents</li>
-                                    <li><strong>Drive or drift:</strong> a fleet model that weighs the energy cost of each action in deciding what to measure and whether to move</li>
-                                    <li><strong>Fleet target:</strong> the same map accuracy as a preplanned survey with lower energy use</li>
-                                </ul>
-
-                                <h4>Research Plan</h4>
-                                <ul class="acc-conf-list">
-                                    <li><strong>Aim 1, modeling and control:</strong> model surge, sway, and yaw; measure hydrodynamic resistance through acceleration and turning tests; and implement PID station keeping and GPS waypoint following, targeting under 0.5 m position error in currents up to 0.3 m/s</li>
-                                    <li><strong>Aim 2, sensing, collection, and energy:</strong> calibrate each sensor so its measurement error is known, and characterize thrust, collection, and energy use</li>
-                                    <li><strong>Aim 3, predictive sampling:</strong> build a fleet of three robots sharing a probabilistic model, using Gaussian processes to forecast plastic and bloom locations and a Bayesian network to estimate sensor reliability, tested in a lab tank and then on Cayuga Lake</li>
+                                    <li><strong>Hardware:</strong> Raspberry Pi and NRF24L01 radio link, with an Arduino Micro driving the motor controllers</li>
+                                    <li><strong>Modeling &amp; control:</strong> surge-sway-yaw dynamics, thrust allocation, and PID station keeping and waypoint following</li>
+                                    <li><strong>Propulsion testing:</strong> load cell measurements of thrust, power, and propeller-impeller interaction</li>
+                                    <li><strong>Energy optimization:</strong> collection rate and energy use versus impeller flow, and energy per distance across speeds and currents</li>
+                                    <li><strong>Predictive sampling:</strong> Gaussian process and Bayesian network models to guide a three-robot fleet</li>
                                 </ul>
 
                                 <div class="proj-tools">
-                                    <span class="proj-tool-tag">Autonomous Surface Vehicles</span>
                                     <span class="proj-tool-tag">Thrust Allocation</span>
                                     <span class="proj-tool-tag">PID Control</span>
                                     <span class="proj-tool-tag">Load Cell Testing</span>
@@ -163,8 +144,6 @@
                                     <span class="proj-tool-tag">Arduino</span>
                                     <span class="proj-tool-tag">MATLAB</span>
                                     <span class="proj-tool-tag">Python</span>
-                                    <span class="proj-tool-tag">Gaussian Processes</span>
-                                    <span class="proj-tool-tag">Bayesian Networks</span>
                                 </div>
 
                                 <h4 style="margin-top:1.5rem;">Link</h4>

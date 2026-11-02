@@ -42,8 +42,24 @@
                 <aside class="research-sidebar">
                     <p class="sidebar-label">Projects</p>
                     <nav class="sidebar-nav">
-                        <button class="sidebar-btn active" data-target="pathrobotics">
+                        <button class="sidebar-btn active" data-target="perception">
                             <span class="sidebar-num">01</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Robot Camera Sensor Simulation</span>
+                                <span class="sidebar-sub">MAE 5810 · Fall 2026</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="haptics">
+                            <span class="sidebar-num">02</span>
+                            <span class="sidebar-info">
+                                <span class="sidebar-title">Skin-Stretch Haptic Grasper</span>
+                                <span class="sidebar-sub">MAE 6800 · In Progress</span>
+                            </span>
+                            <i class="fas fa-chevron-right sidebar-arrow"></i>
+                        </button>
+                        <button class="sidebar-btn" data-target="pathrobotics">
+                            <span class="sidebar-num">03</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Path Robotics Internship</span>
                                 <span class="sidebar-sub">Manufacturing Design Engineer · 2026</span>
@@ -51,7 +67,7 @@
                             <i class="fas fa-chevron-right sidebar-arrow"></i>
                         </button>
                         <button class="sidebar-btn" data-target="ecofiltro">
-                            <span class="sidebar-num">02</span>
+                            <span class="sidebar-num">04</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Reusable Suction Filter</span>
                                 <span class="sidebar-sub">Senior Capstone · 2025</span>
@@ -59,7 +75,7 @@
                             <i class="fas fa-chevron-right sidebar-arrow"></i>
                         </button>
                         <button class="sidebar-btn" data-target="preeclampsia">
-                            <span class="sidebar-num">03</span>
+                            <span class="sidebar-num">05</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Preeclampsia Detection Device</span>
                                 <span class="sidebar-sub">BME 2250 · 2024</span>
@@ -67,7 +83,7 @@
                             <i class="fas fa-chevron-right sidebar-arrow"></i>
                         </button>
                         <button class="sidebar-btn" data-target="lumbar">
-                            <span class="sidebar-num">04</span>
+                            <span class="sidebar-num">06</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Wearable Lumbar Sensor</span>
                                 <span class="sidebar-sub">BME 2310 · 2024</span>
@@ -79,7 +95,7 @@
                     <p class="sidebar-label" style="margin-top:1.75rem;">Outreach</p>
                     <nav class="sidebar-nav">
                         <button class="sidebar-btn" data-target="medrobo">
-                            <span class="sidebar-num">05</span>
+                            <span class="sidebar-num">07</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Medical Robotics Club</span>
                                 <span class="sidebar-sub">VP · 2023–2025</span>
@@ -87,7 +103,7 @@
                             <i class="fas fa-chevron-right sidebar-arrow"></i>
                         </button>
                         <button class="sidebar-btn" data-target="lbat">
-                            <span class="sidebar-num">06</span>
+                            <span class="sidebar-num">08</span>
                             <span class="sidebar-info">
                                 <span class="sidebar-title">Study Abroad</span>
                                 <span class="sidebar-sub">China &amp; Korea · Summer 2025</span>
@@ -100,16 +116,224 @@
                 <!-- Accordion content -->
                 <main class="research-content">
 
-                    <!-- 01 Path Robotics -->
-                    <div class="accordion-section open" id="pathrobotics">
+                    <!-- 01 Robot Perception: camera sensor simulation -->
+                    <div class="accordion-section open" id="perception">
                         <button class="accordion-header" aria-expanded="true">
                             <div class="accordion-header-text">
-                                <span class="accordion-badge darpa-badge">Internship · 2026</span>
-                                <h2>Path Robotics — Manufacturing Design Engineer Intern</h2>
+                                <span class="accordion-badge darpa-badge">MAE 5810 Robot Perception · Oct 2026</span>
+                                <h2>Pinhole RGB Camera Sensor on a KUKA Robotic Arm</h2>
                             </div>
                             <i class="fas fa-chevron-down accordion-icon" style="transform:rotate(180deg)"></i>
                         </button>
                         <div class="accordion-body">
+
+                            <figure class="proj-photo-item no-crop" style="margin:1.25rem 0 1.25rem;">
+                                <img src="assets/images/perception_los_clear.jpg" alt="PyBullet simulation of a KUKA arm beside its end-effector camera view, with the red cube detected">
+                                <figcaption>PyBullet simulation (left) and the end-effector camera view with the OpenCV detection of the red cube (right).</figcaption>
+                            </figure>
+
+                            <p>
+                                For my Robot Perception midterm at Cornell, I modeled a virtual RGB pinhole
+                                camera mounted on the end effector of a seven-joint <strong>KUKA iiwa</strong>
+                                arm in <strong>PyBullet</strong>, loading the robot from its
+                                <strong>URDF</strong>. I then tested how image measurements depend on camera
+                                pose, field of view, target size, and occlusion.
+                            </p>
+                            <p>
+                                Each test compared two independent estimates of where a red cube appears in
+                                the image: a <strong>mathematical prediction</strong> that projects the
+                                cube's known 3D position through the camera model, and an
+                                <strong>OpenCV measurement</strong> taken directly from the rendered pixels.
+                                The two agreed to within <strong>2.91 pixels</strong> in the baseline case on a
+                                640 × 480 image. This validates the geometric model in simulation; it is not
+                                a physical-camera calibration, and it does not model image noise or lens
+                                distortion.
+                            </p>
+
+                            <div class="accordion-links-section">
+                                <h4>Mathematical Modeling</h4>
+                                <dl class="eq-list">
+                                    <dt>World to camera frame</dt>
+                                    <dd>q<sub>C</sub> = R<sub>WC</sub><sup>T</sup> (x<sub>T</sub> − x<sub>C</sub>)</dd>
+                                    <dt>Pinhole projection to pixels</dt>
+                                    <dd>û = c<sub>x</sub> − f q<sub>x</sub> / q<sub>z</sub>, &nbsp; v̂ = c<sub>y</sub> − f q<sub>y</sub> / q<sub>z</sub></dd>
+                                    <dt>Field of view to focal length</dt>
+                                    <dd>f = H / (2 tan(θ / 2))</dd>
+                                    <dt>Sensitivity to lateral motion</dt>
+                                    <dd>∂û / ∂q<sub>x</sub> = −f / q<sub>z</sub></dd>
+                                    <dt>Sensitivity to camera tilt</dt>
+                                    <dd>dû / dα = f [1 + (q<sub>x</sub> / q<sub>z</sub>)<sup>2</sup>]</dd>
+                                    <dt>Apparent target size</dt>
+                                    <dd>w<sub>px</sub> ≈ f L / q<sub>z</sub></dd>
+                                    <dt>Pixel error</dt>
+                                    <dd>e<sub>px</sub> = √[(u<sub>obs</sub> − û)<sup>2</sup> + (v<sub>obs</sub> − v̂)<sup>2</sup>]</dd>
+                                </dl>
+
+                                <h4>Technical Methods</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>Robot setup:</strong> loaded the fixed-base arm from its KUKA URDF and solved inverse kinematics for the end-effector pose (0.00886 mm position error)</li>
+                                    <li><strong>Coordinate transforms:</strong> carried the camera mounting offset and tilt through rotation matrices from the end-effector frame to the camera frame</li>
+                                    <li><strong>Image measurement:</strong> HSV color thresholding, largest-contour selection, and bounding-box centers in OpenCV</li>
+                                    <li><strong>Controlled experiments:</strong> varied one parameter at a time across camera translation, field of view, tilt, cube size, and line of sight</li>
+                                    <li><strong>Error analysis:</strong> compared predicted and measured pixel locations, displacements, and size ratios</li>
+                                </ul>
+
+                                <h4>Key Results</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>Baseline:</strong> predicted (380, 280) px vs. measured (382.5, 281.5) px, a <strong>2.91 px</strong> error</li>
+                                    <li><strong>Translation:</strong> moving the camera about 0.10 m shifted the cube <strong>48 px</strong> in both model and measurement, matching the predicted 480 px/m sensitivity at 0.50 m depth</li>
+                                    <li><strong>Tilt (0° to 20°):</strong> 102.11 px predicted vs. 104.5 px measured horizontal shift</li>
+                                    <li><strong>Field of view (50° to 110°):</strong> detected cube width fell from 108 px to 36 px</li>
+                                    <li><strong>Target size (4 to 10 cm):</strong> image width ratio of 2.55 vs. a physical size ratio of 2.50</li>
+                                    <li><strong>Occlusion:</strong> a blocked cube went undetected even though its center still projected inside the field of view, showing that being in the field of view does not guarantee visibility</li>
+                                </ul>
+                            </div>
+
+                            <div class="research-photo-gallery">
+                                <figure class="gallery-item no-crop">
+                                    <img src="assets/images/perception_tilt0.jpg" alt="Camera view at 0 degrees tilt">
+                                </figure>
+                                <figure class="gallery-item no-crop">
+                                    <img src="assets/images/perception_tilt10.jpg" alt="Camera view at 10 degrees tilt">
+                                </figure>
+                                <figure class="gallery-item no-crop">
+                                    <img src="assets/images/perception_tilt20.jpg" alt="Camera view at 20 degrees tilt">
+                                </figure>
+                            </div>
+                            <p class="gallery-caption">Camera tilt of 0°, 10°, and 20°. Only the tilt changes; the camera center and cube position stay fixed.</p>
+
+                            <div class="acc-figure-wrap" style="max-width:560px;background:var(--white);">
+                                <img src="assets/images/perception_tilt_plot.png" alt="Plot of predicted and OpenCV-measured horizontal pixel position versus camera tilt">
+                            </div>
+                            <p class="gallery-caption">Predicted and OpenCV-measured horizontal position across camera tilt.</p>
+
+                            <div class="proj-photo-grid">
+                                <figure class="proj-photo-item no-crop">
+                                    <img src="assets/images/perception_cube4cm.jpg" alt="Camera view of the 4 cm cube">
+                                    <figcaption>4 cm cube.</figcaption>
+                                </figure>
+                                <figure class="proj-photo-item no-crop">
+                                    <img src="assets/images/perception_tilt0.jpg" alt="Camera view of the 10 cm cube">
+                                    <figcaption>10 cm cube, with the same camera pose and cube center.</figcaption>
+                                </figure>
+                            </div>
+
+                            <figure class="proj-photo-item no-crop" style="margin:1rem 0;">
+                                <img src="assets/images/perception_los_blocked.jpg" alt="Gray obstacle blocking the camera's view of the red cube">
+                                <figcaption>Line of sight blocked by an obstacle: OpenCV finds no red region, although the cube's center projects inside the field of view.</figcaption>
+                            </figure>
+
+                            <div class="accordion-links-section">
+                                <div class="proj-tools">
+                                    <span class="proj-tool-tag">Python</span>
+                                    <span class="proj-tool-tag">PyBullet</span>
+                                    <span class="proj-tool-tag">OpenCV</span>
+                                    <span class="proj-tool-tag">NumPy</span>
+                                    <span class="proj-tool-tag">URDF</span>
+                                    <span class="proj-tool-tag">Inverse Kinematics</span>
+                                    <span class="proj-tool-tag">Pinhole Camera Model</span>
+                                    <span class="proj-tool-tag">Rigid-Body Transforms</span>
+                                    <span class="proj-tool-tag">Sensitivity Analysis</span>
+                                </div>
+
+                                <h4 style="margin-top:1.5rem;">Link</h4>
+                                <div class="acc-featured-links">
+                                    <a href="https://github.com/halleyjwallace/RobotPerception_RobotWithCameraSensor_Sim" target="_blank" rel="noopener" class="feat-link-btn">
+                                        <i class="fab fa-github"></i> Report &amp; Figures on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 Haptics: skin-stretch grasper (in progress) -->
+                    <div class="accordion-section" id="haptics">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge progress-badge">In Progress · MAE 6800 · Fall 2026</span>
+                                <h2>Skin-Stretch Haptic Feedback for Laparoscopic Grasping</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
+
+                            <p style="margin-top:1.25rem;">
+                                For this course project, we are developing a forearm-worn skin-stretch device
+                                to help surgeons and surgical trainees distinguish soft tissue from stiff
+                                structures, such as gallstones,
+                                during minimally invasive gallbladder surgery. Force sensors on the jaws of
+                                laparoscopic forceps will measure grasping force, and a tactor on the forearm
+                                will stretch the skin in proportion to that force, keeping the hand free to
+                                operate.
+                            </p>
+                            <p>
+                                In laparoscopic surgery, trocar friction, abdominal wall elasticity, and the
+                                fulcrum effect all distort the forces a surgeon feels. Earlier forearm
+                                skin-stretch work raised stiffness identification from 50% to 73% and cut peak
+                                force by 36%, but with a palpation probe
+                                (<a href="https://univoak.hal.science/hal-05280392v1" target="_blank" rel="noopener">Saudrais et al., 2025</a>).
+                                Our project extends the approach to grasping, using the forceps surgeons rely
+                                on to hold and retract the gallbladder.
+                            </p>
+
+                            <div class="acc-figure-wrap" style="max-width:620px;">
+                                <img src="assets/images/haptics_concept.png" alt="Concept sketch of force sensors on a laparoscopic grasper wired to an Arduino and a rack-and-pinion tactor on the forearm">
+                            </div>
+                            <p class="gallery-caption">
+                                Concept sketch: force-sensitive resistors on the grasper jaws signal an Arduino,
+                                which drives a servo and rack-and-pinion to displace a forearm tactor.
+                            </p>
+
+                            <div class="accordion-links-section">
+                                <h4>Planned Validation</h4>
+                                <p>
+                                    Five users will rank three objects of different stiffness that they cannot
+                                    see, using a standard laparoscopic grasper and our haptic grasper. We will
+                                    compare how accurately they identify stiffness with each one.
+                                </p>
+
+                                <h4>Project Plan</h4>
+                                <ul class="acc-conf-list">
+                                    <li>Finalize components, order materials, and complete the initial CAD</li>
+                                    <li>Assemble the rack-and-pinion mechanism and validate the force sensors</li>
+                                    <li>Find the force-displacement relationship and integrate the system</li>
+                                    <li>Run the user study and collect data</li>
+                                    <li>Finalize the setup for the demo</li>
+                                </ul>
+
+                                <h4>Skills I Will Build</h4>
+                                <ul class="acc-conf-list">
+                                    <li><strong>Haptic device design:</strong> a wearable, servo-driven rack-and-pinion skin-stretch mechanism</li>
+                                    <li><strong>Sensor integration:</strong> instrumenting forceps jaws with force-sensitive resistors and validating their signals</li>
+                                    <li><strong>Embedded control:</strong> mapping force readings to servo motion on an Arduino in real time</li>
+                                    <li><strong>System characterization:</strong> relating grasping force, object stiffness, and tactor displacement</li>
+                                    <li><strong>Human-centered evaluation:</strong> designing a user study around perception of stiffness</li>
+                                </ul>
+
+                                <div class="proj-tools">
+                                    <span class="proj-tool-tag">Haptics</span>
+                                    <span class="proj-tool-tag">Force-Sensitive Resistors</span>
+                                    <span class="proj-tool-tag">Arduino</span>
+                                    <span class="proj-tool-tag">Servo Control</span>
+                                    <span class="proj-tool-tag">Rack &amp; Pinion</span>
+                                    <span class="proj-tool-tag">CAD</span>
+                                    <span class="proj-tool-tag">Additive Manufacturing</span>
+                                    <span class="proj-tool-tag">User Study Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 Path Robotics -->
+                    <div class="accordion-section" id="pathrobotics">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-text">
+                                <span class="accordion-badge darpa-badge">Internship · 2026</span>
+                                <h2>Path Robotics — Manufacturing Design Engineer Intern</h2>
+                            </div>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-body" hidden>
 
                             <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.25rem;">
                                 <div>
@@ -182,7 +406,7 @@
                         </div>
                     </div>
 
-                    <!-- 02 Ecofiltro -->
+                    <!-- 04 Ecofiltro -->
                     <div class="accordion-section" id="ecofiltro">
                         <button class="accordion-header" aria-expanded="false">
                             <div class="accordion-header-text">
@@ -284,7 +508,7 @@
                         </div>
                     </div>
 
-                    <!-- 03 Preeclampsia Detection Device -->
+                    <!-- 05 Preeclampsia Detection Device -->
                     <div class="accordion-section" id="preeclampsia">
                         <button class="accordion-header" aria-expanded="false">
                             <div class="accordion-header-text">
@@ -346,7 +570,7 @@
                         </div>
                     </div>
 
-                    <!-- 04 Lumbar Sensor -->
+                    <!-- 06 Lumbar Sensor -->
                     <div class="accordion-section" id="lumbar">
                         <button class="accordion-header" aria-expanded="false">
                             <div class="accordion-header-text">
@@ -404,7 +628,7 @@
                         </div>
                     </div>
 
-                    <!-- 05 Medical Robotics Club -->
+                    <!-- 07 Medical Robotics Club -->
                     <div class="accordion-section" id="medrobo">
                         <button class="accordion-header" aria-expanded="false">
                             <div class="accordion-header-text">
@@ -458,7 +682,7 @@
                         </div>
                     </div>
 
-                    <!-- 06 Study Abroad / LBAT -->
+                    <!-- 08 Study Abroad / LBAT -->
                     <div class="accordion-section" id="lbat">
                         <button class="accordion-header" aria-expanded="false">
                             <div class="accordion-header-text">
@@ -585,6 +809,13 @@
                 }
             });
         });
+
+        // Open the linked project when arriving from a deep link (e.g. projects.html#haptics)
+        const linked = location.hash && document.getElementById(location.hash.slice(1));
+        if (linked && linked.classList.contains('accordion-section')) {
+            openSection(linked.id);
+            linked.scrollIntoView({ block: 'start' });
+        }
     </script>
 </body>
 </html>

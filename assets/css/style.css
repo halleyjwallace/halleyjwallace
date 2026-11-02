@@ -1065,6 +1065,22 @@ img { display: block; max-width: 100%; }
 
 .fact-chip i { color: var(--accent); font-size: 0.78rem; }
 
+/* Current coursework row (links to related projects) */
+.about-courses { margin-top: 1.75rem; }
+
+.about-courses-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.about-courses .about-facts { margin-top: 0.65rem; }
+
+a.fact-chip { transition: border-color 0.2s, color 0.2s; }
+a.fact-chip:hover { border-color: var(--accent); color: var(--accent); }
+
 /* ===========================
    News extra / toggle
 =========================== */
@@ -1562,6 +1578,8 @@ img { display: block; max-width: 100%; }
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+.accordion-section { scroll-margin-top: 84px; }
+
 .accordion-section.open {
     border-color: var(--accent);
     box-shadow: var(--shadow);
@@ -1612,6 +1630,7 @@ img { display: block; max-width: 100%; }
 .darpa-badge { background: rgba(45,106,79,0.1); color: var(--accent); border: 1px solid rgba(45,106,79,0.25); }
 .manu-badge  { background: rgba(45,106,79,0.1); color: var(--accent); border: 1px solid rgba(45,106,79,0.25); }
 .mud-badge   { background: rgba(45,106,79,0.1); color: var(--accent); border: 1px solid rgba(45,106,79,0.25); }
+.progress-badge { background: rgba(212,160,23,0.1); color: #a07800; border: 1px solid rgba(212,160,23,0.3); }
 
 .accordion-icon {
     color: var(--text-muted);
@@ -1911,6 +1930,33 @@ img { display: block; max-width: 100%; }
     color: var(--text-muted);
     padding: 0.22rem 0.65rem;
     border-radius: 20px;
+}
+
+/* Show the whole image: screenshots and data figures must not be cropped */
+.proj-photo-item.no-crop img { aspect-ratio: auto; height: auto; }
+.proj-photo-item.no-crop:hover img { transform: none; }
+
+/* Equation list */
+.eq-list {
+    display: grid;
+    grid-template-columns: minmax(170px, auto) 1fr;
+    gap: 0.55rem 1.25rem;
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.eq-list dd {
+    /* Not Playfair: its old-style numerals make a "2" read like a "z" */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text);
+}
+
+@media (max-width: 640px) {
+    .eq-list { grid-template-columns: 1fr; gap: 0.1rem; }
+    .eq-list dd { margin-bottom: 0.6rem; }
 }
 
 /* Coming soon placeholder */
